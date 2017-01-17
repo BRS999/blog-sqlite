@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -10,11 +12,11 @@ namespace ConsoleApplication
     {
         public static void Main(string[] args)
         {
-            var result = getUrls("https://gist.githubusercontent.com/anonymous/d2ec2461468d4a0372db/raw/b1eb88fa20b147deaafa9e38768174d79f705805/gistfile1.txt");
-
+            //var result = getUrls("https://gist.githubusercontent.com/anonymous/d2ec2461468d4a0372db/raw/b1eb88fa20b147deaafa9e38768174d79f705805/gistfile1.txt");
+            var result = readFile("Urls.txt");
             deleteBlogs();
 
-            foreach (var x in result.Result.Split('\n').Select(x => x).Distinct())
+            foreach (var x in result.Select(x => x).Distinct())
             {
                 addBlog(new Blog { Url = x });
             }
@@ -58,6 +60,12 @@ namespace ConsoleApplication
             return await response.Content.ReadAsStringAsync();
         }
 
-
+        public static IEnumerable<string> readFile(string file)
+        {
+            foreach (var x in File.ReadLines(file))
+            {
+                yield return x;
+            }
+        }
     }
 }
