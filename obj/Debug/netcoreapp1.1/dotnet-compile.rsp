@@ -118,7 +118,9 @@
 --reference:/Users/ben/.nuget/packages/System.Xml.ReaderWriter/4.3.0/ref/netstandard1.3/System.Xml.ReaderWriter.dll
 --reference:/Users/ben/.nuget/packages/System.Xml.XDocument/4.3.0/ref/netstandard1.3/System.Xml.XDocument.dll
 /Users/ben/projects/blog/Program.cs
-/Users/ben/projects/blog/Migrations/20170117011457_MyFirstMigration.cs
-/Users/ben/projects/blog/Migrations/20170117011457_MyFirstMigration.Designer.cs
+/Users/ben/projects/blog/Migrations/20170118035427_model.cs
+/Users/ben/projects/blog/Migrations/20170118035427_model.Designer.cs
+/Users/ben/projects/blog/Migrations/20170118035657_title.cs
+/Users/ben/projects/blog/Migrations/20170118035657_title.Designer.cs
 /Users/ben/projects/blog/Migrations/BloggingContextModelSnapshot.cs
 /Users/ben/projects/blog/Models/Model.cs

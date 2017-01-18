@@ -3,23 +3,25 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
-using Intro;
+using Model;
 
 namespace blog.Migrations
 {
     [DbContext(typeof(BloggingContext))]
-    [Migration("20170117011457_MyFirstMigration")]
-    partial class MyFirstMigration
+    [Migration("20170118035657_title")]
+    partial class title
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.0-rtm-22752");
 
-            modelBuilder.Entity("Intro.Blog", b =>
+            modelBuilder.Entity("Model.Blog", b =>
                 {
                     b.Property<int>("BlogId")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Title");
 
                     b.Property<string>("Url");
 
@@ -28,7 +30,7 @@ namespace blog.Migrations
                     b.ToTable("Blogs");
                 });
 
-            modelBuilder.Entity("Intro.Post", b =>
+            modelBuilder.Entity("Model.Post", b =>
                 {
                     b.Property<int>("PostId")
                         .ValueGeneratedOnAdd();
@@ -46,9 +48,9 @@ namespace blog.Migrations
                     b.ToTable("Posts");
                 });
 
-            modelBuilder.Entity("Intro.Post", b =>
+            modelBuilder.Entity("Model.Post", b =>
                 {
-                    b.HasOne("Intro.Blog", "Blog")
+                    b.HasOne("Model.Blog", "Blog")
                         .WithMany("Posts")
                         .HasForeignKey("BlogId")
                         .OnDelete(DeleteBehavior.Cascade);

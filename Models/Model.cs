@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 
-namespace Intro
+namespace Model
 {
     public class BloggingContext : DbContext
     {
@@ -18,6 +18,8 @@ namespace Intro
     {
         public int BlogId { get; set; }
         public string Url { get; set; }
+
+        public string Title {get;set;}
 
         public List<Post> Posts { get; set; }
     }

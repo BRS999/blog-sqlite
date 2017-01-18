@@ -8,9 +8,10 @@ using Model;
 namespace blog.Migrations
 {
     [DbContext(typeof(BloggingContext))]
-    partial class BloggingContextModelSnapshot : ModelSnapshot
+    [Migration("20170118035427_model")]
+    partial class model
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.0-rtm-22752");
@@ -19,8 +20,6 @@ namespace blog.Migrations
                 {
                     b.Property<int>("BlogId")
                         .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Title");
 
                     b.Property<string>("Url");
 
