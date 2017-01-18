@@ -13,7 +13,7 @@ namespace ConsoleApplication
         public static void Main(string[] args)
         {
             //var result = getUrls("https://gist.githubusercontent.com/anonymous/d2ec2461468d4a0372db/raw/b1eb88fa20b147deaafa9e38768174d79f705805/gistfile1.txt");
-            var result = readFile("Urls.txt");
+            var result = readFile("Data/Urls.txt");
             deleteBlogs();
 
             foreach (var x in result.Select(x => x).Distinct())
